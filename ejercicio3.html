@@ -1,0 +1,51 @@
+<canvas id='tablero' width=500 height=450></canvas>
+<script>
+   function recorte(arr){
+ctx.beginPath();
+ctx.moveTo(arr[0],arr[1]);
+for(var i = 2;i<arr.length;i+=2)
+     ctx.lineTo(arr[i],arr[i+1]);
+ctx.clip();
+
+}
+   
+   function triangulo(cd,colorBorde,colorRelleno,grosor){
+ctx.beginPath();
+ctx.strokeStyle=colorBorde;
+ctx.fillStyle= colorRelleno;
+ctx.lineWidth=grosor;
+ctx.moveTo(cd[0],cd[1]);
+ctx.lineTo(cd[2],cd[3]);
+ctx.lineTo(cd[4],cd[5]);
+ctx.closePath();
+ctx.stroke();
+ctx.fill();
+}
+
+ function rectangulo(cd,colorBorde,colorRelleno,grosor){
+ctx.beginPath();
+ctx.strokeStyle=colorBorde;
+ctx.fillStyle= colorRelleno;
+ctx.lineWidth=grosor;
+ctx.moveTo(cd[0],cd[1]);
+ctx.lineTo(cd[2],cd[3]);
+ctx.lineTo(cd[4],cd[5]);
+ctx.lineTo(cd[6],cd[7]);
+ctx.closePath();
+ctx.stroke();
+ctx.fill();
+
+}
+   var c=document.getElementById('tablero')
+   var ctx=c.getContext('2d')
+
+   var[azul, verde, amarillo, naranja , gris] = ['rgba(0,162,232)','rgba(34,177,76)','rgba(255,242,0)','rgba(255,127,39)','rgba(195,195,195)'];
+   var recAzul = [18,234,362,234,362,275,18,275],recVerde=[316,308,316,12,355,12,355,308],recAmarillo=[42,306,42,12,85,13,85,306],recNaranja=[16,30,370,30,370,75,16,75],trGris=[118,14,390,165,132,300];
+
+ 
+rectangulo(recAzul,'gray',azul)//azul
+rectangulo(recVerde,'gray',verde)//verde
+rectangulo(recAmarillo,'gray',amarillo)//amarillo
+rectangulo(recNaranja,'gray',naranja)//naranja
+triangulo(trGris,'gray',gris)//amarillo
+</script>
