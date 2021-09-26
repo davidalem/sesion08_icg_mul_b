@@ -42,10 +42,15 @@ ctx.fill();
    var[azul, verde, amarillo, naranja , gris] = ['rgba(0,162,232)','rgba(34,177,76)','rgba(255,242,0)','rgba(255,127,39)','rgba(195,195,195)'];
    var recAzul = [18,234,362,234,362,275,18,275],recVerde=[316,308,316,12,355,12,355,308],recAmarillo=[42,306,42,12,85,13,85,306],recNaranja=[16,30,370,30,370,75,16,75],trGris=[118,14,390,165,132,300];
 
- 
-rectangulo(recAzul,'gray',azul)//azul
-rectangulo(recVerde,'gray',verde)//verde
-rectangulo(recAmarillo,'gray',amarillo)//amarillo
-rectangulo(recNaranja,'gray',naranja)//naranja
-triangulo(trGris,'gray',gris)//amarillo
+rectangulo(recAzul,amarillo,azul,2)//rectangulo azul
+rectangulo(recAmarillo,amarillo,amarillo)// rectangulo amarillo
+triangulo(trGris,naranja,gris,2)//triangulo gris
+rectangulo(recNaranja,naranja,naranja)//rectangulo naranja
+recorte([316,308,316,12,355,12,355,308]);
+rectangulo(recVerde,verde,verde)//rectangulo verde
+rectangulo(recAzul,amarillo,azul,2)//rectangulo azul;
+triangulo(trGris,naranja,gris,2)//triangulo gris
+
+
+
 </script>
